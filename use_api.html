@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Use API</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // This api is just an example. I does not work
+            fetch('https://example.com/data.json')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+            });
+        });
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
