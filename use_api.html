@@ -4,12 +4,27 @@
 	<title>Use API</title>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // This api is just an example. I does not work
-            fetch('https://example.com/data.json')
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-            });
+            let myHeaders = new Headers();
+            myHeaders.append("apikey", "pbLGIR3Db2y7J1JdNmoVz1RgYSAm1ix7");
+
+            let requestOptions = {
+            method: 'GET',
+            redirect: 'follow',
+            headers: myHeaders
+            };
+
+                       
+            fetch("https://api.apilayer.com/exchangerates_data/latest?symbols={eur}&base={usd}", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+
+            // // This api is just an example. I does not work
+            // fetch('https://example.com/data.json')
+            // .then(response => response.json())
+            // .then(data => {
+            //     console.log(data)
+            // });
         });
 	</script>
 </head>
