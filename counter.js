@@ -16,16 +16,24 @@ function count(){
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('h1').innerHTML = localStorage.getItem('counter');
-    document.querySelector('button').onclick = count;
-    let count_value = document.querySelector('h1').innerHTML;
-    alert(count_value*2)
-    
+    // tmp = localStorage.getItem('counter');
+    // document.querySelector('h1').innerHTML = tmp;
+    // alert(tmp*2)
     // setInterval(count, 1000);
-    if (count_value % 2 == 1) {
-        document.querySelector('p').innerHTML = 'This is an odd number';
-    } 
-    else {
-        document.querySelector('p').innerHTML = 'This is an even number';
+    document.querySelector('button').onclick =  function() {
+        // activate count()
+        count();
+        // update p tag
+        tmp = localStorage.getItem('counter');
+        document.querySelector('h1').innerHTML = tmp;
+        if (tmp % 2 == 1) {
+            document.querySelector('p').innerHTML = 'This is an odd number';
+        } 
+        else {
+            document.querySelector('p').innerHTML = 'This is an even number';
+        }
+        // document.querySelector('p').innerHTML = tmp*2;
+        // alert(tmp*2)
     }
-});
+    
+})
