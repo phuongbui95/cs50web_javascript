@@ -16,24 +16,23 @@ function count(){
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // tmp = localStorage.getItem('counter');
-    // document.querySelector('h1').innerHTML = tmp;
-    // alert(tmp*2)
-    // setInterval(count, 1000);
+    // Display current value of localStorage
+    let tmp = localStorage.getItem('counter');
+    document.querySelector('h1').innerHTML = tmp;
+    // Triggle onclick event
     document.querySelector('button').onclick =  function() {
-        // activate count()
+        // Activate count()
         count();
-        // update p tag
+        // Update localStorage
         tmp = localStorage.getItem('counter');
         document.querySelector('h1').innerHTML = tmp;
-        if (tmp % 2 == 1) {
+        // update p tag
+        if (tmp % 2 == 1) {      
             document.querySelector('p').innerHTML = 'This is an odd number';
         } 
         else {
             document.querySelector('p').innerHTML = 'This is an even number';
         }
-        // document.querySelector('p').innerHTML = tmp*2;
-        // alert(tmp*2)
     }
     
 })
